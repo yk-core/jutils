@@ -1,27 +1,4 @@
 name: Rename file.js to changed.js
 
-on:
-  push:
-    branches: [main]
-
-jobs:
-  rename:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Rename file
-        run: mv file.js changed.js
-
-      - name: Commit and push
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-
-          git add changed.js
-          git rm file.js
-
-          git commit -m "Rename file.js → changed.js [skip ci]" || echo "No changes"
-          git push
+on: push
+run: echo "Hi"
