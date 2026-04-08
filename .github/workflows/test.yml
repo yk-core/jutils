@@ -1,4 +1,8 @@
 name: Rename file.js to changed.js
 
 on: push
-run: echo "Hi"
+jobs:
+ test:
+  runs-on: ubuntu-latest
+  steps:
+   - run: echo "Hi"
